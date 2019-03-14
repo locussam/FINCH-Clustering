@@ -1,0 +1,46 @@
+function req_c= req_numclust(c, data,req_clust)
+%% Algo 2 procedure to refine a partion for required numeber of clusters
+% part of FINCH code
+% copyright M. Saquib Sarfraz (KIT), 2019
+
+%Input:
+% c: partion to refine ..  one of the partions returned form FINCH
+% Example: 
+% suppose FINCH returns partitons wth cluster num_clust=[2061,177,37,10,2]c(:,4) to refine the 4rth FINCH partion from FINCH returne c mat
+% req_clust: required numebr of cluster
+% Output:
+% req_c : required number of clusters: 1xN vector of  cluster labels
+
+
+       iter=length(unique(c))- req_clust;
+
+       [c_,~, mat]=get_merge([],c',data); 
+    for i=1:iter
+
+    [Affinity_,  orig_dist]= clustRank(mat,[]);
+    
+    Affinity_= top_affinity(Affinity_, orig_dist); %update affinity only keeping one merge at a time
+    
+    [u] = get_clust(Affinity_, [],inf);
+    
+    
+   [c_,~, mat]=get_merge(c_,u,data);    
+    
+  
+    end
+    
+    %req_clust_final =length(unique(c_));
+    req_c = c_;
+    
+  function Affinity_= top_affinity(Affinity_, orig_dist)
+    
+        Affinity_(logical(speye(size(Affinity_))))=0;
+       
+        in_=find(Affinity_>0);
+        [~,v]=sort(orig_dist(in_)); idx=in_(v(1:2)); 
+        Affinity_= zeros(size(Affinity_),'logical');
+        Affinity_(idx)=1;
+             
+    end    
+    
+    end
