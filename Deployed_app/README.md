@@ -24,8 +24,7 @@ Typical command
 ```
 ./run_FINCH.sh YOUR-MCR-PATH/v95/ YOUR-Data-PATH/data.csv Your-output-Path 1 0
 ```
-
-            
+   
 
 
 
