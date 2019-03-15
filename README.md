@@ -13,7 +13,7 @@ https://arxiv.org/abs/1902.11266 [CVPR 2019 Oral]
 
 ##### Matlab Requirements
 
-Matlab 2017 or above: may run on earlier versions as well
+Matlab 2017 or above: may run on earlier versions as well. If you do not have Matlab, you can run the deployed FINCH executable, [see details](https://github.com/ssarfraz/FINCH-Clustering/tree/master/Deployed_app).
 
 **Optional**. install flann to get first neighbours from Kd-tree for large data
 
