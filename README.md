@@ -11,21 +11,19 @@ https://arxiv.org/abs/1902.11266 [CVPR 2019 Oral]
 
 
 
-#####Matlab Requirements
+##### Matlab Requirements
 
 Matlab 2017 or above: may run on earlier versions as well
 
 **Optional**. install flann to get first neighbours from Kd-tree for large data
 
 
-##Usage:
+## Usage:
 Please go in the path where you copied this folder or add its path to your Matlab path.
 
 ``` 
 [c, num_clust]= FINCH(data, initial_rank, verbose);
 ```
-
-
 
 Input:
 
@@ -67,7 +65,7 @@ The true labels for this data are also provided in the same repo in label.mat fi
 
 Similarly you can run FINCH on other datasets e.g., we provide the used mnist10k and mice protein data.
 
-###Required number of Clusters
+### Required number of Clusters
 
 We provide a very simple approximation to refine one of the FINCH partition to come down to required number of clusters. However, please note this is not recommended and provided here just for completeness.
 One could use better ways to refine a partition, if needed.
@@ -82,7 +80,7 @@ req_c= req_numclust(c(:,3), data, 15)
  Provides the required 15 clusters by refining the respective FINCH partition (37 clusters), from FINCH returned c mat in the above example. See function help for more details.
 
 
-###Note:
+### Note:
 To run it on large data >70k samples, install flann library, it will automatically switch to use flann(kd tree) for finding 1st neighbours. Note that you can also change when to switch to using flann in the function [clustRank.m] line 10.
 
 **Finally**, if you use FINCH on 2D toy data (for visualization) then use euclidean distance in the file [clustRank.m] line 11 to obtain first neighbor, as here you have xy coordinates of each point to cluster.
