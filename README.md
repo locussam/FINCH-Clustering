@@ -3,7 +3,7 @@
 The repository contains our Matlab and Python (updates to follow) code for the proposed FINCH clustering algorithm described in the **Efficient Parameter-free Clustering Using First Neighbor Relations** CVPR 2019 paper.
 
 ```
-M. Saquib Sarfraz, Vive Sharma and Ranier Stiefelhagen,
+M. Saquib Sarfraz, Vivek Sharma and Rainer Stiefelhagen,
 "Efficient Parameter-free Clustering Using First Neighbor Relations",
 https://arxiv.org/abs/1902.11266 [CVPR 2019 Oral]
 ```
