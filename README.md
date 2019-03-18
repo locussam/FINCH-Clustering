@@ -15,7 +15,7 @@ https://arxiv.org/abs/1902.11266 [CVPR 2019 Oral]
 
 Matlab 2017 or above: may run on earlier versions as well. If you do not have Matlab, you can run the deployed FINCH executable, [see details](https://github.com/ssarfraz/FINCH-Clustering/tree/master/Deployed_app).
 
-**Optional**. install flann to get first neighbours from Kd-tree for large data
+**Optional**. install [flann](https://github.com/mariusmuja/flann) to get first neighbours from Kd-tree for large data
 
 
 ## Usage:
@@ -81,7 +81,7 @@ req_c= req_numclust(c(:,3), data, 15)
 
 
 ### Note:
-To run it on large data >70k samples, install flann library, it will automatically switch to use flann(kd tree) for finding 1st neighbours. Note that you can also change when to switch to using flann in the function [clustRank.m] line 10.
+To run it on large data >70k samples,install flann library [flann github page](https://github.com/mariusmuja/flann) (add path to matlab, see [flann_nn.m](https://github.com/ssarfraz/FINCH-Clustering/blob/master/FINCH_Core/flann_nn.m)), it will automatically switch to use flann(kd tree) for finding 1st neighbours. Note that you can also change when to switch to using flann in the function [clustRank.m] line 10.
 
 **Finally**, if you use FINCH on 2D toy data (for visualization) then use euclidean distance in the file [clustRank.m] line 11 to obtain first neighbor, as here you have xy coordinates of each point to cluster.
 
