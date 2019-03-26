@@ -60,7 +60,7 @@ As you see: num_clust = [2061, 177, 37, 10, 2]
 
 inidicating it found 2061 clusters in step 1, 177 in step 2 and so on to 10 clusters in step 4. You can pick the respective cluster labels for the data in the returned array c. For example, c(:,4) will provide labels for 10 clustering result.
 
-***[Evaluation]***: 
+**[Evaluation]**: 
 The true labels for this data are also provided in the same repo in label.mat file. You can run any performance metric e.g., to compute NMI metric use nmi.mat function (provided in utils) and run nmi(labels, c(:,4)), or compute BCubed Fscore with b3(labels, c(:,4)).
 
 Similarly you can run FINCH on other datasets e.g., we provide the used mnist10k and mice protein data.
